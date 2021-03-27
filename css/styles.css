@@ -295,6 +295,7 @@ button:focus {
 .team {
   padding-top: 94px;
   padding-bottom: 94px;
+  background: var(--buttom-bg-color);
 }
 .name,
 .profession {
@@ -495,6 +496,7 @@ footer .social-icons .icon {
   background-color: var(--buttom-bg-color);
   width: 270px;
   height: 120px;
+  margin-bottom: 30px;
   background-repeat: no-repeat;
   background-position: center;
 }
