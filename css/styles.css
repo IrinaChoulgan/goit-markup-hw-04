@@ -9,6 +9,8 @@
   --border-bottom-color: #ececec;
   --border-portfolio: #eeeeee;
   --buttom-bg-color: #f5f4fa;
+  --icon-color: #afb1b8;
+  --icon-clients: #afb1b8;
   --logo-font-family: "Raleway", sans-serif;
   --text-general: "Roboto", sans-serif;
 }
@@ -141,6 +143,11 @@ button:focus {
   background-color: var(--accent-color);
   color: var(--dark-bg-text-color);
 }
+.button.portfolio:hover,
+.button.portfolio:focus {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
 
 /* заголовки */
 .title {
@@ -233,11 +240,26 @@ button:focus {
   margin-left: auto;
   align-items: center;
 }
-
+.nav {
+  display: flex;
+  align-items: center;
+}
 /* секция герой */
 
 .hero-section {
+  max-width: 1600px;
   height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/fon-img/hero-img.jpg);
 }
 .hero-section .container {
   padding-top: 200px;
@@ -264,6 +286,11 @@ button:focus {
   padding-top: 94px;
   padding-bottom: 94px;
 }
+.grid-item {
+  flex-basis: calc((100% - 30px * 3) / 3);
+  margin-left: 30px;
+  margin-top: 30px;
+}
 /* секция наша команда */
 .team {
   padding-top: 94px;
@@ -285,16 +312,54 @@ button:focus {
 .profession {
   color: var(--main-text-color);
 }
-.grid-item {
-  flex-basis: calc((100% - 30px * 3) / 3);
-  margin-left: 30px;
-  margin-top: 30px;
-}
-
 .grid-item.team-item {
   flex-basis: calc((100% - 30px * 4) / 4);
   margin-left: 30px;
   margin-top: 30px;
+  padding-bottom: 30px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+
+/* секция постоянные клиенты */
+
+.clients {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.grid-item.clients-icons-item {
+  flex-basis: calc((100% - 30px * 6) / 6);
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.grig-item.clients-icons-item .list.grid {
+  flex-basis: calc((100% - 30px * 6) / 6);
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.clients a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 90px;
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
+}
+
+.clients-icons-link .icon {
+  fill: var(--icon-clients);
+}
+.clients-icons-link:hover .icon,
+.clients-icons-link:focus .icon {
+  fill: var(--accent-color);
+}
+.clients-icons-link:hover,
+.clients-icons-link:focus {
+  border-color: var(--accent-color);
 }
 
 /* футер */
@@ -312,6 +377,27 @@ button:focus {
 .link.footer.mail {
   display: inline-block;
   margin-bottom: 9px;
+}
+
+.footer p {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1, 14;
+  text-transform: uppercase;
+  color: var(--dark-bg-text-color);
+}
+.footer .container {
+  display: flex;
+}
+.social-connect {
+  padding-top: 12px;
+  flex-basis: calc((50% - 45px) / 2);
+}
+.information {
+  margin-right: 70px;
+  flex-basis: calc((50% - 45px) / 2);
 }
 /* секция портфолио */
 .portfolio.section .list {
@@ -354,6 +440,23 @@ button:focus {
   padding-bottom: 20px;
   padding-right: 24px;
 }
+.list.projects.grid .item-grid:hover,
+.list.projects.grid .item-grid:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.dark-bg.footer {
+  display: flex;
+}
+footer .list.social-icons {
+  justify-content: flex-start;
+}
+footer .social-icons-link {
+  background: rgba(255, 255, 255, 0.1);
+}
+footer .social-icons .icon {
+  fill: var(--dark-bg-text-color);
+}
 
 /* темный фон */
 .dark-bg {
@@ -364,4 +467,82 @@ button:focus {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--dark-bg-text-color);
+}
+
+/* иконки */
+.icon-mail,
+.icon-tel {
+  display: flex;
+  align-items: center;
+}
+
+.connection.list .item .icon {
+  fill: currentColor;
+  margin-right: 10px;
+}
+.icon-mail .icon {
+  width: 16px;
+  height: 12px;
+}
+.icon-tel .icon {
+  width: 10px;
+  height: 16px;
+}
+
+.advantages .item::before {
+  display: block;
+  content: "";
+  background-color: var(--buttom-bg-color);
+  width: 270px;
+  height: 120px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.advantages .item:nth-child(1)::before {
+  background-image: url(../images/fon-img/icons.advantages/antenna.svg);
+}
+.advantages .item:nth-child(2)::before {
+  background-image: url(../images/fon-img/icons.advantages/clock.svg);
+}
+.advantages .item:nth-child(3)::before {
+  background-image: url(../images/fon-img/icons.advantages/diagram.svg);
+}
+.advantages .item:nth-child(4)::before {
+  background-image: url(../images/fon-img/icons.advantages/astronaut.svg);
+}
+
+/* иконки нашей команды */
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons-item + .social-icons-item {
+  margin-left: 10px;
+}
+.social-icons-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.social-icons .icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--icon-color);
+}
+
+.social-icons-link:hover .icon,
+.social-icons-link:focus .icon {
+  fill: #ffffff;
+}
+.social-icons-link:hover,
+.social-icons-link:focus {
+  background-color: var(--accent-color);
 }
